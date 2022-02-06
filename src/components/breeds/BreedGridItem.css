@@ -1,0 +1,34 @@
+.card-item {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #ffffff;
+	height: 200px;
+	transition: all 0.3s ease-out;
+}
+
+.card-item__body {
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.75);
+	border-radius: 5px;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	transition: all 0.3s ease-out;
+	width: 100%;
+}
+
+.card-item:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
+.card-item:hover .card-item__body {
+	background-color: rgba(0, 0, 0, 0.25);
+}
+
+.card-item__title {
+	text-transform: capitalize;
+}

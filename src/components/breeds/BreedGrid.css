@@ -1,0 +1,27 @@
+.alphabet-filter {
+	list-style: none;
+	justify-content: space-between;
+	display: flex;
+	text-transform: uppercase;
+	padding: 0;
+	margin: 0;
+}
+
+.alphabet-filter li {
+	color: #cccccc;
+	cursor: pointer;
+	font-size: 18px;
+	transition: all 0.3s ease-out;
+}
+
+.alphabet-filter li.active,
+.alphabet-filter li:hover {
+	color: #000000;
+	font-weight: 500;
+}
+
+.cards-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 35px;
+}

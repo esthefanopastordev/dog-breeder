@@ -1,3 +1,7 @@
+import './DogsApp.css';
+
+import { AppRouter } from './routers/AppRouter';
+
 export const DogsApp = () => {
-	return <div>Hello World</div>;
+	return <AppRouter />;
 };
