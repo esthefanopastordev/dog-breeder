@@ -1,0 +1,12 @@
+.breed-screen__container .breed-screen__img {
+	background-size: cover;
+	background-repeat: none;
+	background-position: center center;
+	width: 500px;
+	height: 500px;
+	margin: 0 auto;
+}
+
+.breed-screen__container button {
+	text-transform: capitalize;
+}
