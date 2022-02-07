@@ -1,10 +1,15 @@
-.breed-screen__container .breed-screen__img {
-	background-size: cover;
-	background-repeat: none;
-	background-position: center center;
-	width: 500px;
+.breed-screen__container .breed-screen__img__container {
 	height: 500px;
 	margin: 0 auto;
+	width: 500px;
+}
+
+.breed-screen__container .breed-screen__img {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 100%;
+	height: 100%;
 }
 
 .breed-screen__container button {

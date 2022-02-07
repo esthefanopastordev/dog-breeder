@@ -7,29 +7,39 @@ import { getAlphabet } from '../../util/getAlphabet';
 import './BreedGrid.css';
 
 import { BreedGridItem } from './BreedGridItem';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 export const BreedGrid = ({ breeds = [] }) => {
-	const [searchParams, setSearchParams] = useSearchParams();
 	const [filteredBreeds, setFilteredBreeds] = useState([]);
+	const [searchParams, setSearchParams] = useSearchParams();
+	const navigate = useNavigate();
 
 	const currentLetter = searchParams.get('letter');
 
 	useEffect(() => {
-		const letter = searchParams.get('letter');
+		let letter = searchParams.get('letter');
+		const letterIsValid = getAlphabet().find(l => l.toLowerCase() === letter);
 
 		if (letter) {
-			const filtered = breeds.filter(
-				breed => breed.name.charAt(0) === letter.toLowerCase()
-			);
+			if (letterIsValid) {
+				letter = letter.toLowerCase();
+				const filtered = breeds.filter(
+					breed => breed.name.charAt(0) === letter
+				);
 
-			setFilteredBreeds(filtered);
+				setFilteredBreeds(filtered);
+			} else {
+				navigate('/breeds');
+			}
 		} else {
 			setFilteredBreeds(breeds);
 		}
-	}, [breeds, searchParams]);
+	}, [breeds, searchParams, navigate]);
 
-	const handleFilterByLetter = (letter = '') => setSearchParams({ letter });
+	const handleFilterByLetter = (letter = '') => {
+		if (letter) setSearchParams({ letter });
+		else setSearchParams({});
+	};
 
 	return (
 		<>
